@@ -7,6 +7,7 @@ const signale = require('signale');
 (async function () {
 	let pObj = await pkgScripts()
 	let pArr = Object.keys(pObj)
+	const chalk = require('chalk')
 
 	let options = {
 		types: {
@@ -77,7 +78,7 @@ const signale = require('signale');
 	log()
 
 	thr.length &&
-	thr.map(name =>signale._log(name+": "+pObj[name])) &&
+	thr.map(name =>signale._log(chalk.green(name)+": "+pObj[name])) &&
 	log()
 
 
