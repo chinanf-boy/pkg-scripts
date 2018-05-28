@@ -1,0 +1,63 @@
+{
+	"name": "pkg-scripts",
+	"version": "0.0.0",
+	"description": "cli to show package.json scripts",
+	"license": "MIT",
+	"main": "dist/pkg-scripts.js",
+	"module": "dist/pkg-scripts.m.js",
+	"repository": "chinanf-boy/pkg-scripts",
+	"author": {
+		"name": "chinanf-boy",
+		"email": "865501259@qq.com",
+		"url": "llever.com"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "nyc ava -v -s",
+		"precommit": "lint-staged",
+		"prepublish": "npm run build",
+		"build": "microbundle",
+		"pub": "npm run test && npm run npmUp && npm run git",
+		"npmUp": "npm version patch && npm publish",
+		"git": "git push && git push --tags"
+	},
+	"size-limit": [
+		{
+			"path": "dist/pkg-scripts.js"
+		}
+	],
+	"lint-staged": {
+		"*.{js,json,css,md}": [
+			"prettier --single-quote --trailing-comma es5 --write",
+			"git add"
+		]
+	},
+	"files": [],
+	"keywords": [
+		"cli-app",
+		"cli",
+		""
+	],
+	"dependencies": {
+		"meow": "^3.7.0",
+		"weoptions": "^0.0.7",
+		"two-log": "^0.0.2"
+	},
+	"devDependencies": {
+		"codecov": "^3.0.2",
+		"nyc": "^11.8.0",
+		"lint-staged": "^7.0.0",
+		"microbundle": "^0.4.4",
+		"prettier": "^1.12.1",
+		"ava": "^0.25.0"
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	}
+}
