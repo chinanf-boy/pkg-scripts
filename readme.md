@@ -14,6 +14,8 @@ npm i -g pkg-scripts
 pkg-scripts
 ```
 
+![test](./test.png)
+
 ## Usage
 
 ```js
