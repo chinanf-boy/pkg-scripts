@@ -1,6 +1,6 @@
 {
 	"name": "pkg-scripts",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "cli to show package.json scripts",
 	"license": "MIT",
 	"main": "dist/pkg-scripts.js",
