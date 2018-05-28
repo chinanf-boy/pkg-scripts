@@ -1,4 +1,4 @@
-# pkg-scripts [![Build Status](https://travis-ci.org/chinanf-boy/pkg-scripts.svg?branch=master)](https://travis-ci.org/chinanf-boy/pkg-scripts) [![codecov](https://codecov.io/gh/chinanf-boy/pkg-scripts/badge.svg?branch=master)](https://codecov.io/gh/chinanf-boy/pkg-scripts?branch=master) [![explain](http://llever.com/explain.svg)](https://github.com/chinanf-boy/pkg-scripts-explain)
+# pkg-scripts [![Build Status](https://travis-ci.org/chinanf-boy/pkg-scripts.svg?branch=master)](https://travis-ci.org/chinanf-boy/pkg-scripts) [![codecov](https://codecov.io/gh/chinanf-boy/pkg-scripts/badge.svg?branch=master)](https://codecov.io/gh/chinanf-boy/pkg-scripts?branch=master)
 
 > cli to show package.json scripts
 
@@ -6,69 +6,48 @@
 
 ## Install
 
-
-
 ```
 npm i -g pkg-scripts
 ```
 
-
-
+``` bash
+pkg-scripts
+```
 
 ## Usage
 
 ```js
 const pkgScripts = require('pkg-scripts');
+//=> just return package.json scripts
 
-pkgScripts('unicorns');
-//=> 'unicorns & rainbows'
+await pkgScripts(); // Promise
+pkgScripts.sync(); // sync
+
 ```
 
 
 ## API
 
-### pkgScripts(input, [options])
+### pkgScripts
 
-#### input
-
-name: | input
+ name: | pkgScripts
 ---------|----------
-Type: | `string`
-Desc: | Lorem ipsum.
+Type: | `function:Promise`
+Desc: | return package.json scripts
 
-#### options
+#### sync
 
-##### foo
-
- name: | foo
+ name: | sync
 ---------|----------
-Type: | `boolean`
-Default: | `false`
-Desc: | Lorem ipsum.
+Type: | `function`
+Desc: | return package.json scripts
 
+### return
 
-## CLI
-
-```
-npm install --global pkg-scripts
-```
-
-```
-$ pkg-scripts --help
-
-  Usage
-    pkg-scripts [input]
-
-  Options
-    --foo  Lorem ipsum [Default: false]
-
-  Examples
-    $ pkg-scripts
-    unicorns & rainbows
-    $ pkg-scripts ponies
-    ponies & rainbows
-```
-
+ name: | return
+---------|----------
+Type: | `Object`
+Desc: | package.json scripts
 
 ## License
 
