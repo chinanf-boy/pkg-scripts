@@ -16,6 +16,8 @@
 		"node": ">=4"
 	},
 	"scripts": {
+		"start": "node cli.js",
+		"dev": "microbundle watch",
 		"test": "nyc ava -v -s",
 		"precommit": "lint-staged",
 		"prepublish": "npm run build",
@@ -26,7 +28,9 @@
 	},
 	"size-limit": [
 		{
-			"path": "dist/pkg-scripts.js"
+			"path": "dist/pkg-scripts.js",
+			"gzip": false,
+			"webpack": false
 		}
 	],
 	"lint-staged": {
@@ -39,19 +43,20 @@
 	"keywords": [
 		"cli-app",
 		"cli",
-		""
+		"pkg",
+		"scripts"
 	],
 	"dependencies": {
-		"meow": "^3.7.0",
-		"pkg-conf": "^2.1.0"
+		"pkg-conf": "^2.1.0",
+		"signale": "^1.1.0"
 	},
 	"devDependencies": {
+		"ava": "^0.25.0",
 		"codecov": "^3.0.2",
-		"nyc": "^11.8.0",
 		"lint-staged": "^7.0.0",
 		"microbundle": "^0.4.4",
-		"prettier": "^1.12.1",
-		"ava": "^0.25.0"
+		"nyc": "^11.8.0",
+		"prettier": "^1.12.1"
 	},
 	"nyc": {
 		"reporter": [
