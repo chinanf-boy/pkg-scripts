@@ -10,5 +10,5 @@ test('async', async t => {
 test('sync', async t => {
 	let res = sync()
 	let l = Object.keys(res).length
-	t.is(l, 7)
+	t.is(l, 9)
 });
