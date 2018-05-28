@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 'use strict';
 const meow = require('meow');
-const pkgScripts = require('.');
+const pkgScripts = require('./index');
 
 const cli = meow(`
 	Usage
-	  $ pkg-scripts [input]
-
-	Options
-	  --foo  Lorem ipsum [Default: false]
-
-	Examples
 	  $ pkg-scripts
-	  unicorns & rainbows
-	  $ pkg-scripts ponies
-	  ponies & rainbows
+
+	Show package.json scripts
+
 `);
 
-console.log(pkgScripts(cli.input[0] || 'unicorns'));
+(async function(){
+	let p = await pkgScripts()
+
+	console.log(JSON.stringify(p,null,2));
+})()
+
+

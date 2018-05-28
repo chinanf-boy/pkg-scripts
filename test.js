@@ -1,11 +1,14 @@
 import test from 'ava';
-import m from '.';
+import m,{sync} from './index';
 
-test('title', t => {
-	const err = t.throws(() => {
-		m(123);
-	}, TypeError);
-	t.is(err.message, 'Expected a string, got number');
+test('async', async t => {
+	let res = await m()
+	let l = Object.keys(res).length
+	t.is(l, 7)
+});
 
-	t.is(m('unicorns'), 'unicorns & rainbows');
+test('sync', async t => {
+	let res = sync()
+	let l = Object.keys(res).length
+	t.is(l, 7)
 });

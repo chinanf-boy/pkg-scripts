@@ -43,8 +43,7 @@
 	],
 	"dependencies": {
 		"meow": "^3.7.0",
-		"weoptions": "^0.0.7",
-		"two-log": "^0.0.2"
+		"pkg-conf": "^2.1.0"
 	},
 	"devDependencies": {
 		"codecov": "^3.0.2",

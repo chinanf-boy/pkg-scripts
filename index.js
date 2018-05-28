@@ -1,10 +1,10 @@
 'use strict';
-module.exports = (input, opts) => {
-	if (typeof input !== 'string') {
-		throw new TypeError(`Expected a string, got ${typeof input}`);
-	}
+const pkg = require('pkg-conf')
 
-	opts = opts || {};
-
-	return input + ' & ' + (opts.postfix || 'rainbows');
+module.exports = async () => {
+	return await pkg("scripts")
 };
+
+module.exports.sync = () =>{
+	return pkg.sync("scripts")
+}
