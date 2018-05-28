@@ -61,19 +61,24 @@ const signale = require('signale');
 	const log  = console.log.bind(console)
 	log()
 
-	pre.length && pre.forEach(name =>{
+	pre.length &&
+	pre.map(name =>{
 		preScripts._scopeName = name
 		preScripts['pre'](pObj[name])
-	})
+	}) &&
 	log()
 
-	one.length && one.forEach(name =>scripts[name](pObj[name]))
+	one.length &&
+	one.map(name =>scripts[name](pObj[name])) &&
 	log()
 
-	two.length && two.forEach(name =>signale[name](pObj[name]))
+	two.length &&
+	two.map(name =>signale[name](pObj[name])) &&
 	log()
 
-	thr.length && thr.forEach(name =>signale._log(name+": "+pObj[name]))
+	thr.length &&
+	thr.map(name =>signale._log(name+": "+pObj[name])) &&
+	log()
 
 
 
