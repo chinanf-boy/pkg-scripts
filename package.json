@@ -39,7 +39,9 @@
 			"git add"
 		]
 	},
-	"files": [],
+	"files": [
+		"cli.js"
+	],
 	"keywords": [
 		"cli-app",
 		"cli",
