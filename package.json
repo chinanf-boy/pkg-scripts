@@ -19,6 +19,7 @@
 		"start": "node cli.js",
 		"dev": "microbundle watch",
 		"test": "nyc ava -v -s",
+		"watch": "microbundle watch",
 		"precommit": "lint-staged",
 		"prepublish": "npm run build",
 		"build": "microbundle",

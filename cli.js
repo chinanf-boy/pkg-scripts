@@ -26,7 +26,11 @@ const signale = require('signale');
 		  dev: {
 			color: 'magenta',
 			label: 'dev'
-		  }
+			},
+			watch: {
+				color: 'cyan',
+				label: 'watch'
+			}
 		}
 	  };
 
@@ -50,18 +54,20 @@ const signale = require('signale');
 
 	pArr.forEach(name => {
 		if(name.startsWith('pre')){
-			pre.push(name)
+			pre.push(name) // 0
 		}else if(scripts[name]){
-			one.push(name)
+			one.push(name) // 1
 		}else{
 			signale[name] ?
-			(two.push(name)) :
-			(thr.push(name))
+			(two.push(name)) : // 2
+			(thr.push(name))  // 3
 		}
 	})
+
 	const log  = console.log.bind(console)
 	log()
 
+// 0
 	pre.length &&
 	pre.map(name =>{
 		preScripts._scopeName = name
@@ -69,14 +75,17 @@ const signale = require('signale');
 	}) &&
 	log()
 
+// 1
 	one.length &&
 	one.map(name =>scripts[name](pObj[name])) &&
 	log()
 
+// 2
 	two.length &&
 	two.map(name =>signale[name](pObj[name])) &&
 	log()
 
+// 3
 	thr.length &&
 	thr.map(name =>signale._log(chalk.green(name)+": "+pObj[name])) &&
 	log()
