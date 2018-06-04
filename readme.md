@@ -51,6 +51,17 @@ Desc: | return package.json scripts
 Type: | `Object`
 Desc: | package.json scripts
 
+---
+
+## Use
+
+- [pkg-conf](https://github.com/sindresorhus/pkg-conf)
+- [signale](https://github.com/klauscfhq/signale)
+
+<a href="https://patreon.com/yobrave">
+<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" height="50">
+</a>
+
 ## License
 
 MIT © [chinanf-boy](http://llever.com)
